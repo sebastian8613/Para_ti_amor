@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para June ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #000000;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0.95) 100%);
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      background: rgba(18, 18, 18, 0.85);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 20px;
+      padding: 45px 35px;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.25), inset 0 0 15px rgba(212, 175, 55, 0.1);
+      animation: fadeIn 1.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .heart-icon {
+      font-size: 3.2rem;
+      color: #e6b800;
+      text-shadow: 0 0 20px rgba(230, 184, 0, 0.8);
+      animation: beat 1.4s infinite ease-in-out;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      letter-spacing: 2px;
+      color: #d4af37;
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      margin-bottom: 25px;
+    }
+
+    .photo-frame {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      margin: 25px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid rgba(212, 175, 55, 0.6);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9), 0 0 18px rgba(212, 175, 55, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .message-part {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #e5e5e5;
+      text-align: justify;
+      white-space: pre-line;
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+
+    .music-btn {
+      background: linear-gradient(135deg, #d4af37, #aa7c11);
+      border: none;
+      color: #000000;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      margin-top: 20px;
+    }
+
+    .music-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Querido June</h1>
+
+    <!-- Primer bloque del mensaje -->
+    <div class="message-part">
+      Hay momentos en los que la distancia se siente pesada, pero basta con pensar en nosotros para recordar que cada kilómetro vale la pena. Sabes muy bien todo lo que siento por ti y lo firme que es mi amor. Construir esta historia a tu lado, paso a paso, ha sido una de las decisiones más verdaderas y bonitas de mi vida.
+    </div>
+
+    <!-- Primera foto -->
+    <div class="photo-frame">
+      <img src="WhatsApp Image 2026-08-16 at 6.20.27 PM (1).jpeg" alt="June 1" />
+    </div>
+
+    <!-- Segundo bloque del mensaje -->
+    <div class="message-part">
+      Sé que hoy nos separa un espacio físico, pero también sé que esto es solo una etapa previa a todo lo que nos espera. Mantengo intacta la promesa de que nos vamos a conocer en persona, de que nos vamos a abrazar sin pantallas de por medio y de que vamos a celebrar el haber sido lo suficientemente valientes para elegirnos, aún a la distancia.
+    </div>
+
+    <!-- Segunda foto -->
+    <div class="photo-frame">
+      <img src="WhatsApp Image 2026-08-16 at 6.20.27 PM.jpeg" alt="June 2" />
+    </div>
+
+    <!-- Tercer bloque del mensaje -->
+    <div class="message-part">
+      Gracias por ser quien eres, por tu confianza y por caminar a mi lado en esta consolidación de lo nuestro. Eres una persona increíble y un pilar fundamental en mi día a día.
+
+      No olvides nunca que aquí estoy, soñando con el día en que la espera termine y por fin podamos estar juntos. Te amo.
+    </div>
+
+    <audio id="bg-music" loop autoplay preload="auto">
+      <source src="2026-08-16-191430266.mp3.mpeg" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()" id="btn-text">
+      ⏸️ Pausar música
+    </button>
+  </div>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    const btnText = document.getElementById('btn-text');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const startAudio = () => {
+        music.play().then(() => {
+          btnText.innerHTML = '⏸️ Pausar música';
+        }).catch(() => {
+          btnText.innerHTML = '🎵 Reproducir música';
+        });
+      };
+
+      startAudio();
+
+      document.body.addEventListener('click', () => {
+        if (music.paused) {
+          startAudio();
+        }
+      }, { once: true });
+    });
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btnText.innerHTML = '⏸️ Pausar música';
+      } else {
+        music.pause();
+        btnText.innerHTML = '🎵 Reproducir música';
+      }
+    }
+  </script>
+</body>
+</html>
