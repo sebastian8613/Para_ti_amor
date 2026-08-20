@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Mi Amor Eterno ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #050002;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 15px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(220, 20, 60, 0.15) 0%, rgba(5, 0, 2, 0.98) 100%);
+      pointer-events: none;
+    }
+
+    /* Pantalla de Bienvenida Minimalista */
+    .welcome-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #050002;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .welcome-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .welcome-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: #ff2a55;
+      margin-bottom: 30px;
+      text-shadow: 0 0 18px rgba(255, 42, 85, 0.7);
+    }
+
+    .enter-btn {
+      background: linear-gradient(135deg, #e60039, #800020);
+      border: 1px solid #ff4d79;
+      color: #ffffff;
+      padding: 16px 38px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(230, 0, 57, 0.6);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .enter-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 42, 85, 0.9);
+    }
+
+    /* Carta Principal */
+    .card {
+      position: relative;
+      background: rgba(15, 3, 8, 0.88);
+      border: 1px solid rgba(230, 0, 57, 0.5);
+      border-radius: 20px;
+      padding: 45px 35px;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(230, 0, 57, 0.3), inset 0 0 20px rgba(230, 0, 57, 0.15);
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .heart-icon {
+      font-size: 3.5rem;
+      color: #ff1a4a;
+      text-shadow: 0 0 22px rgba(255, 26, 74, 0.9);
+      animation: beat 1.3s infinite ease-in-out;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #ff3366;
+      text-shadow: 0 0 15px rgba(255, 51, 102, 0.6);
+      margin-bottom: 25px;
+    }
+
+    .photo-frame {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      margin: 25px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 51, 102, 0.6);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.95), 0 0 20px rgba(230, 0, 57, 0.35);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 51, 102, 0.6);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .message-part {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #fce8ed;
+      text-align: justify;
+      white-space: pre-line;
+      letter-spacing: 0.3px;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #ff4d79;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(255, 77, 121, 0.4);
+    }
+
+    .music-btn {
+      background: linear-gradient(135deg, #e60039, #800020);
+      border: 1px solid #ff4d79;
+      color: #ffffff;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(230, 0, 57, 0.4);
+      margin-top: 25px;
+    }
+
+    .music-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 42, 85, 0.8);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(230, 0, 57, 0.5); }
+      50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(255, 42, 85, 0.8); }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de Bienvenida Minimalista -->
+  <div class="welcome-screen" id="welcome-screen">
+    <div class="heart-icon">❤️</div>
+    <div class="welcome-title">Tengo algo especial para ti...</div>
+    <button class="enter-btn" onclick="openCard()">Abrir tu carta ✨</button>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="card" id="card">
+    <div class="heart-icon">❤️</div>
+    <h1>¡TE AMO, TE AMO Y TE AMO!</h1>
+
+    <!-- Bloque 1 -->
+    <div class="message-part">
+      Y no es solo decirlo, es sentirlo hasta los huesos, hasta lo más profundo de mi alma, hasta que mi corazón no da más de tanto latir por ti. Eres la cosa más bonita que Dios puso en mi camino, eres mi cielo entero hecho persona, eres cada estrella, cada rayito de sol, cada gota de lluvia bonita... <span class="highlight">TODO ERES TÚ</span>.
+    </div>
+
+    <!-- Foto 1 -->
+    <div class="photo-frame">
+      <img src="1000145101.jpg" alt="Amor 1" />
+    </div>
+
+    <!-- Bloque 2 -->
+    <div class="message-part">
+      Antes de ti mi vida era un silencio, y llegaste tú y le pusiste música, colores, magia y un amor tan grande que no me cabe en el pecho, se me desborda todo el tiempo pensando en ti.
+    </div>
+
+    <!-- Foto 2 (Corregida) -->
+    <div class="photo-frame">
+      <img src="1000145780.jpg" alt="Amor 2" />
+    </div>
+
+    <!-- Bloque 3 -->
+    <div class="message-part">
+      No te quiero solo para hoy, ni para mañana, ni para unos años... <span class="highlight">TE QUIERO PARA SIEMPRE, PARA TODA LA ETERNIDAD</span>, AQUÍ Y EN EL CIELO, EN ESTA VIDA Y EN MIL VIDAS MÁS. Si me dieran a elegir mil veces dónde estar, mil veces elegiría tus brazos.
+    </div>
+
+    <!-- Foto 3 -->
+    <div class="photo-frame">
+      <img src="1000149492.jpg" alt="Amor 3" />
+    </div>
+
+    <!-- Bloque 4 -->
+    <div class="message-part">
+      Porque ahí es donde mi alma descansa, ahí es donde pertenezco, ahí es donde soy <span class="highlight">FELIZ DE VERDAD</span>. Eres mi amor, mi vida, mi respiración, mi todo... y si me preguntan qué es lo más hermoso que tengo en la vida, con los ojos llenos de lágrimas de felicidad gritaré tu nombre.
+    </div>
+
+    <!-- Foto 4 -->
+    <div class="photo-frame">
+      <img src="1000145315.jpg" alt="Amor 4" />
+    </div>
+
+    <!-- Bloque 5 / Cierre -->
+    <div class="message-part">
+      Porque <span class="highlight">TÚ ERES MI AMOR MÁS GRANDE, MÁS PURO Y MÁS VERDADERO</span>, Y NADA NI NADIE PODRÁ SEPARARNOS PORQUE MI CORAZÓN YA ES TUYO, COMPLETAMENTE TUYO, Y SERÁ TUYO PARA SIEMPRE Y PARA SIEMPRE Y PARA SIEMPRE.
+    </div>
+
+    <!-- Audio (Corregido a audio.mp3) -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="audio.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()" id="btn-text">
+      ⏸️ Pausar música
+    </button>
+  </div>
+
+  <script>
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const card = document.getElementById('card');
+    const music = document.getElementById('bg-music');
+    const btnText = document.getElementById('btn-text');
+
+    function openCard() {
+      welcomeScreen.classList.add('hidden');
+      card.classList.add('visible');
+      
+      music.play().then(() => {
+        btnText.innerHTML = '⏸️ Pausar música';
+      }).catch((err) => {
+        console.log('Error reproduciendo audio:', err);
+        btnText.innerHTML = '🎵 Reproducir música';
+      });
+    }
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btnText.innerHTML = '⏸️ Pausar música';
+      } else {
+        music.pause();
+        btnText.innerHTML = '🎵 Reproducir música';
+      }
+    }
+  </script>
+</body>
+</html>
